@@ -1,0 +1,2 @@
+# pysnake
+用Python基于Pygame写的贪吃蛇，以及一个对Pygame再次封装的通用游戏类MyGame
