@@ -5,7 +5,7 @@
 # 功能: define constants, configurations, etc.
 # 许可: General Public License
 # 作者: Zhao Xin (赵鑫) <pythonchallenge@qq.com>
-# 时间: 2016.07.19
+# 时间: 2016.07.20
 
 import pygame
 

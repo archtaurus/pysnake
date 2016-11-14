@@ -5,10 +5,14 @@
 # 功能: define class MyGame
 # 许可: General Public License
 # 作者: Zhao Xin (赵鑫) <pythonchallenge@qq.com>
-# 时间: 2016.07.19
+# 时间: 2016.07.20
 
+import os
 import sys
 import pygame
+
+os.environ["SDL_VIDEO_CENTERED"] = "1"
+# os.environ["SDL_VIDEO_WINDOW_POS"] = "1664, 300"
 
 
 class MyGame(object):
