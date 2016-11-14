@@ -13,3 +13,8 @@
 - **Day 2** 移动的方块 A MOVING BLOCK
 [[源码 source](https://github.com/archtaurus/pysnake/tree/day2)],
 [[视频教程 video tutorial](http://v.youku.com/v_show/id_XMTYzOTczMjc2OA==.html)]
+- **Day 3** 方块的速度和定位 SPEED CONTROL and POSTIONING
+[[源码 source](https://github.com/archtaurus/pysnake/tree/day3)],
+[[视频教程 video tutorial](http://v.youku.com/v_show/id_XMTY0MTA0ODk0OA==.html)]
+
+**[回到最新版本](https://github.com/archtaurus/pysnake/tree/master)**
