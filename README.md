@@ -40,5 +40,8 @@
 - **Day 11** 第一滴血，蛇的重生 First Blood and First Respawn
 [[源码 source](https://github.com/archtaurus/pysnake/tree/day11/src)],
 [[视频教程 video tutorial](http://v.youku.com/v_show/id_XMTY1MjY1MjMwMA==.html)]
+- **Day 12** 文字显示、暂停和重新开始 Font Display + Restart + Pause
+[[源码 source](https://github.com/archtaurus/pysnake/tree/day12/src)],
+[[视频教程 video tutorial](http://v.youku.com/v_show/id_XMTY1MzgwOTYxNg==.html)]
 
 **[回到最新版本](https://github.com/archtaurus/pysnake/tree/master)**

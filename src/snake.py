@@ -5,7 +5,7 @@
 # 功能: define class Snake
 # 许可: General Public License
 # 作者: Zhao Xin (赵鑫) <pythonchallenge@qq.com>
-# 时间: 2016.07.21
+# 时间: 2016.07.22
 
 from settings import *
 from cell import Cell
@@ -56,7 +56,6 @@ class Snake(object):
             if meeting is self.game.apple:
                 self.game.apple.drop()
                 self.game.apple_counter += 1
-                print "吃了 %d 个苹果" % self.game.apple_counter
             else:
                 self.body, tail = self.body[:-1], self.body[-1]
                 self.field.del_cell(tail.x, tail.y)
@@ -75,7 +74,6 @@ class Snake(object):
         self._speed = speed
         interval = 1000 / self._speed
         self.game.add_update_action("snake.move", self.move, interval)
-        print "速度：", self.speed
 
     def get_speed(self):
         return self._speed
@@ -92,7 +90,6 @@ class Snake(object):
 
     def die(self):
         self.alive = False
-        print "游戏结束！！！"
         for body_cell in self.body:
             body_cell.color1 = SNAKE_COLOR_SKIN_DEAD
             body_cell.color2 = SNAKE_COLOR_BODY_DEAD
@@ -102,9 +99,6 @@ class Snake(object):
     def respawn(self):
         # 复生
         if not self.alive:
-            self.game.apple_counter = 0
-            self.field.clear()              # 移除尸体
-            self.game.apple.drop()
             self.head = Cell(SNAKE_DEFAULT_X, SNAKE_DEFAULT_Y,
                              self.skin_color, self.head_color)
             self.field.put_cell(self.head)

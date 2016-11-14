@@ -6,7 +6,7 @@
 # 功能: main program
 # 许可: General Public License
 # 作者: Zhao Xin (赵鑫) <pythonchallenge@qq.com>
-# 时间: 2016.07.21
+# 时间: 2016.07.22
 
 import pygame
 from settings import *
@@ -44,7 +44,34 @@ class PySnake(MyGame):
         self.key_bind(KEY_RIGHT, self.snake.turn, direction=RIGHT)
         self.key_bind(pygame.K_EQUALS, self.snake.speed_up)
         self.key_bind(pygame.K_MINUS, self.snake.speed_down)
-        self.key_bind(KEY_RESPAWN, self.snake.respawn)
+        self.key_bind(KEY_RESPAWN, self.restart)
+
+        self.add_draw_action(self.show_score)
+
+    def restart(self):
+        if not self.snake.alive:
+            self.field.clear()
+            self.apple_counter = 0
+            self.apple.drop()
+            self.snake.respawn()
+
+    def show_score(self):
+        text = "Apple %d" % self.apple_counter
+        output = self.font.render(text, True, (255, 255, 33))
+        self.screen.blit(output, (0, 0))
+
+        if not self.snake.alive:
+            text = " GAME OVER "
+            output = self.font.render(text, True, (255, 33, 33), WHITE)
+            self.screen.blit(output, (320 - 54, 240 - 10))
+            text = " press R to restart "
+            output = self.font.render(text, True, GREY, DARK_GREY)
+            self.screen.blit(output, (320 - 94, 260))
+
+        if not self.running and self.snake.alive:
+            text = " GAME PAUSED "
+            output = self.font.render(text, True, LIGHT_GREY, DARK_GREY)
+            self.screen.blit(output, (320 - 54, 240 - 10))
 
 
 if __name__ == '__main__':
