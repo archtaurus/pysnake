@@ -6,6 +6,8 @@
 
 ## 视频教程对应版本列表 DAY by DAY TUTORIALS
 
+### 第一季 SEASON 1
+
 [视频教程第1集 video tutorial 1](http://v.youku.com/v_show/id_XMTYzMzg5MzQ0NA==.html),
 [视频教程第2集 video tutorial 2](http://v.youku.com/v_show/id_XMTYzNTU0ODA5Mg==.html)
 
@@ -48,5 +50,7 @@
 - **Day 13** 窗口图标、游戏音效 Icon and Sound
 [[源码 source](https://github.com/archtaurus/pysnake/tree/day13/src)],
 [[视频教程 video tutorial](http://v.youku.com/v_show/id_XMTY1Njc1ODQ1Ng==.html)]
+
+----
 
 **[回到最新版本](https://github.com/archtaurus/pysnake/tree/master)**
