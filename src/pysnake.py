@@ -6,7 +6,7 @@
 # 功能: main program
 # 许可: General Public License
 # 作者: Zhao Xin (赵鑫) <pythonchallenge@qq.com>
-# 时间: 2016.07.20
+# 时间: 2016.07.21
 
 import pygame
 from settings import *
@@ -31,7 +31,9 @@ class PySnake(MyGame):
         self.field = Field(self, COLUMNS, ROWS)
         self.apple_counter = 0
         self.apple = Apple(self)
-        self.snake = Snake(self, 0, 0, 5, RIGHT, 5, SNAKE_COLOR_SKIN,
+        self.snake = Snake(self, SNAKE_DEFAULT_X, SNAKE_DEFAULT_Y,
+                           SNAKE_DEFAULT_BODY_LENGTH, RIGHT,
+                           SNAKE_DEFAULT_SPEED, SNAKE_COLOR_SKIN,
                            SNAKE_COLOR_BODY, SNAKE_COLOR_HEAD)
 
         # 控制按键设定
@@ -42,6 +44,7 @@ class PySnake(MyGame):
         self.key_bind(KEY_RIGHT, self.snake.turn, direction=RIGHT)
         self.key_bind(pygame.K_EQUALS, self.snake.speed_up)
         self.key_bind(pygame.K_MINUS, self.snake.speed_down)
+        self.key_bind(KEY_RESPAWN, self.snake.respawn)
 
 
 if __name__ == '__main__':

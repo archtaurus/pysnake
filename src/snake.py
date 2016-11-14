@@ -5,7 +5,7 @@
 # 功能: define class Snake
 # 许可: General Public License
 # 作者: Zhao Xin (赵鑫) <pythonchallenge@qq.com>
-# 时间: 2016.07.20
+# 时间: 2016.07.21
 
 from settings import *
 from cell import Cell
@@ -47,6 +47,11 @@ class Snake(object):
             meeting = self.field.get_cell(self.head.x + self.direction[0],
                                           self.head.y + self.direction[1])
 
+            # 死亡审判
+            if meeting and meeting is not self.game.apple:
+                self.die()
+                return
+
             # 判断吃了没有，吃了就不断尾巴了
             if meeting is self.game.apple:
                 self.game.apple.drop()
@@ -84,3 +89,29 @@ class Snake(object):
     def speed_down(self):
         if self.speed > 1:
             self.speed -= 1
+
+    def die(self):
+        self.alive = False
+        print "游戏结束！！！"
+        for body_cell in self.body:
+            body_cell.color1 = SNAKE_COLOR_SKIN_DEAD
+            body_cell.color2 = SNAKE_COLOR_BODY_DEAD
+        self.head.color1 = SNAKE_COLOR_SKIN_DEAD
+        self.head.color2 = SNAKE_COLOR_HEAD_DEAD
+
+    def respawn(self):
+        # 复生
+        if not self.alive:
+            self.game.apple_counter = 0
+            self.field.clear()              # 移除尸体
+            self.game.apple.drop()
+            self.head = Cell(SNAKE_DEFAULT_X, SNAKE_DEFAULT_Y,
+                             self.skin_color, self.head_color)
+            self.field.put_cell(self.head)
+            tmp_body_cell = Cell(-1, -1, self.skin_color, self.body_color)
+            self.body = [tmp_body_cell] * SNAKE_DEFAULT_BODY_LENGTH
+            self.direction = SNAKE_DEFAULT_DIRECTION
+            self.new_direction = SNAKE_DEFAULT_DIRECTION
+            self.speed = SNAKE_DEFAULT_SPEED
+            self.alive = True
+            self.live = SNAKE_DEFAULT_LIVE
