@@ -5,7 +5,7 @@
 # 功能: define class Snake
 # 许可: General Public License
 # 作者: Zhao Xin (赵鑫) <pythonchallenge@qq.com>
-# 时间: 2016.07.22
+# 时间: 2016.07.24
 
 from settings import *
 from cell import Cell
@@ -30,6 +30,8 @@ class Snake(object):
         self.speed = speed
         self.alive = True
         self.live = live
+        self.sound_hit = pygame.mixer.Sound("hit.wav")
+        self.sound_eat = pygame.mixer.Sound("eat.wav")
 
     def turn(self, **kwargs):
         if (self.direction in [LEFT, RIGHT] and
@@ -54,6 +56,7 @@ class Snake(object):
 
             # 判断吃了没有，吃了就不断尾巴了
             if meeting is self.game.apple:
+                self.sound_eat.play()
                 self.game.apple.drop()
                 self.game.apple_counter += 1
             else:
@@ -89,6 +92,7 @@ class Snake(object):
             self.speed -= 1
 
     def die(self):
+        self.sound_hit.play()
         self.alive = False
         for body_cell in self.body:
             body_cell.color1 = SNAKE_COLOR_SKIN_DEAD

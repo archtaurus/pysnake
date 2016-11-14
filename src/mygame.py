@@ -5,7 +5,7 @@
 # 功能: define class MyGame
 # 许可: General Public License
 # 作者: Zhao Xin (赵鑫) <pythonchallenge@qq.com>
-# 时间: 2016.07.22
+# 时间: 2016.07.24
 
 import os
 import sys
@@ -21,12 +21,13 @@ class MyGame(object):
     def __init__(self, name="My Game", size=(640, 480), fps=60,
                  font_filename="Minecraft.ttf", font_size=16, icon=None):
         pygame.init()
+        pygame.mixer.init()
         pygame.display.set_caption(name)
         self.screen_size = self.screen_width, self.screen_height = size
+        pygame.display.set_icon(pygame.image.load(icon)) if icon else None
         self.screen = pygame.display.set_mode(self.screen_size)
         self.fps = fps
         self.font = pygame.font.Font(font_filename, font_size)
-        pygame.display.set_icon(pygame.image.load(icon)) if icon else None
         self.clock = pygame.time.Clock()
         self.now = 0
         self.background = pygame.Surface(self.screen_size)

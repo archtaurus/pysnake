@@ -6,7 +6,7 @@
 # 功能: main program
 # 许可: General Public License
 # 作者: Zhao Xin (赵鑫) <pythonchallenge@qq.com>
-# 时间: 2016.07.22
+# 时间: 2016.07.24
 
 import pygame
 from settings import *
@@ -20,7 +20,8 @@ class PySnake(MyGame):
     "贪吃蛇游戏"
 
     def __init__(self):
-        super(PySnake, self).__init__(GAME_NAME, SCREEN_SIZE, FPS)
+        super(PySnake, self).__init__(GAME_NAME, SCREEN_SIZE, FPS,
+                                      "Minecraft.ttf", 16, "pysnake.png")
         self.background.fill(BACKGROUND_COLOR)
         for _ in range(CELL_SIZE, SCREEN_WIDTH, CELL_SIZE):
             pygame.draw.line(self.background, GRID_COLOR,

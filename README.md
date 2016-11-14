@@ -43,5 +43,8 @@
 - **Day 12** 文字显示、暂停和重新开始 Font Display + Restart + Pause
 [[源码 source](https://github.com/archtaurus/pysnake/tree/day12/src)],
 [[视频教程 video tutorial](http://v.youku.com/v_show/id_XMTY1MzgwOTYxNg==.html)]
+- **Day 13** 窗口图标、游戏音效 Icon and Sound
+[[源码 source](https://github.com/archtaurus/pysnake/tree/day13/src)],
+[[视频教程 video tutorial](http://v.youku.com/v_show/id_XMTY1Njc1ODQ1Ng==.html)]
 
 **[回到最新版本](https://github.com/archtaurus/pysnake/tree/master)**
