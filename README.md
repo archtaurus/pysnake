@@ -28,5 +28,8 @@
 - **Day 7** 测试MyGame类 Have A Test of MyGame
 [[源码 source](https://github.com/archtaurus/pysnake/tree/day7)],
 [[视频教程 video tutorial](http://v.youku.com/v_show/id_XMTY0Njk0NTY3Mg==.html)]
+- **Day 8** 将项目分作多个文件 PySnake and MyGame
+[[源码 source](https://github.com/archtaurus/pysnake/tree/day8)],
+[[视频教程 video tutorial](http://v.youku.com/v_show/id_XMTY0Nzk3MTE2MA==.html)]
 
 **[回到最新版本](https://github.com/archtaurus/pysnake/tree/master)**
