@@ -12,6 +12,7 @@ import pygame
 from settings import *
 from mygame import MyGame
 from field import Field
+from apple import Apple
 from snake import Snake
 
 
@@ -28,6 +29,8 @@ class PySnake(MyGame):
             pygame.draw.line(self.background, GRID_COLOR,
                              (0, _), (SCREEN_WIDTH, _))
         self.field = Field(self, COLUMNS, ROWS)
+        self.apple_counter = 0
+        self.apple = Apple(self)
         self.snake = Snake(self, 0, 0, 5, RIGHT, 5, SNAKE_COLOR_SKIN,
                            SNAKE_COLOR_BODY, SNAKE_COLOR_HEAD)
 

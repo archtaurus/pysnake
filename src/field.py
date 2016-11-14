@@ -30,11 +30,9 @@ class Field(object):
         if 0 <= x < self.columns and 0 <= y < self.rows:
             return self.cell_array[y][x]
 
-    def pop_cell(self, x, y):
+    def del_cell(self, x, y):
         if 0 <= x < self.columns and 0 <= y < self.rows:
-            cell = self.cell_array[y][x]
             self.cell_array[y][x] = None
-            return cell
 
     def draw(self):
         for row in self.cell_array:

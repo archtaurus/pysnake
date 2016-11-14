@@ -40,12 +40,29 @@ class Snake(object):
 
     def move(self):
         if self.alive:
+            # 改变方向
+            self.direction = self.new_direction
+
+            # 探测下一个位置的物体
+            meeting = self.field.get_cell(self.head.x + self.direction[0],
+                                          self.head.y + self.direction[1])
+
+            # 判断吃了没有，吃了就不断尾巴了
+            if meeting is self.game.apple:
+                self.game.apple.drop()
+                self.game.apple_counter += 1
+                print "吃了 %d 个苹果" % self.game.apple_counter
+            else:
+                self.body, tail = self.body[:-1], self.body[-1]
+                self.field.del_cell(tail.x, tail.y)
+
+            # 增加一节脖子
             new_body_cell = Cell(self.head.x, self.head.y,
                                  self.skin_color, self.body_color)
+            self.body = [new_body_cell] + self.body
             self.field.put_cell(new_body_cell)
-            self.body, tail = [new_body_cell] + self.body[:-1], self.body[-1]
-            self.field.pop_cell(tail.x, tail.y)
-            self.direction = self.new_direction
+
+            # 移动蛇头
             self.head.move(*self.direction)
             self.field.put_cell(self.head)
 
