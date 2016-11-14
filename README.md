@@ -4,6 +4,8 @@
 
 ![screenshot](https://github.com/archtaurus/pysnake/raw/master/screenshots/2016-07-23-020131_642x505_scrot.png)
 
+----
+
 ## 视频教程对应版本列表 DAY by DAY TUTORIALS
 
 ### 第一季 SEASON 1
