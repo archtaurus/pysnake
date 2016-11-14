@@ -6,117 +6,88 @@
 # 功能: main program
 # 许可: General Public License
 # 作者: Zhao Xin (赵鑫) <pythonchallenge@qq.com>
-# 时间: 2016.07.15
+# 时间: 2016.07.17
 
-# 载入模块
-import os
 import sys
 import pygame
 
-# 设置常数
+# COLORS
+BLACK = 0, 0, 0
+DARK_GREY = 33, 33, 33
+BACKGROUND_COLOR = BLACK
+GRID_COLOR = DARK_GREY
+SNAKE_COLOR_SKIN = 33, 255, 33
+SNAKE_COLOR_BODY = 33, 192, 33
+SNAKE_COLOR_HEAD = 192, 192, 33
+
+# SETTINGS - KEYS
+KEY_EXIT = pygame.K_ESCAPE
+KEY_UP = pygame.K_UP
+KEY_DOWN = pygame.K_DOWN
+KEY_LEFT = pygame.K_LEFT
+KEY_RIGHT = pygame.K_RIGHT
+
+# SETTINGS - GAME
+GAME_NAME = "pysnake"
+SCREEN_SIZE = SCREEN_WIDTH, SCREEN_HEIGHT = (640, 480)
 CELL_SIZE = 20
+FPS = 60
 UP, DOWN, LEFT, RIGHT = ((0, -CELL_SIZE), (0, CELL_SIZE),
                          (-CELL_SIZE, 0), (CELL_SIZE, 0))
 
-# 画面居中的小技巧
-os.environ["SDL_VIDEO_CENTERED"] = "1"
-# os.environ["SDL_VIDEO_WINDOW_POS"] = "1664, 300"
 
-# pygame初始化
-pygame.init()
-pygame.display.set_caption("pysnake")
+class MyGame(object):
+    "pygame模板类"
 
-# Game
-game_clock = pygame.time.Clock()
-game_speed = 60
-game_screen_width, game_screen_height = 640, 480
-game_screen = pygame.display.set_mode((game_screen_width, game_screen_height))
-game_field = game_screen.get_rect()  # <rect (0, 0, 640, 480)>
-game_bgcolor = 0, 0, 0
-game_linecolor = 33, 33, 33
-game_running = True
-game_playing = True
+    def __init__(self, name="My Game", size=(640, 480), fps=60, icon=None):
+        pygame.init()
+        pygame.display.set_caption(name)
+        self.screen_size = self.screen_width, self.screen_height = size
+        self.screen = pygame.display.set_mode(self.screen_size)
+        self.fps = fps
+        pygame.display.set_icon(pygame.image.load(icon)) if icon else None
+        self.clock = pygame.time.Clock()
+        self.now = 0
+        self.background = pygame.Surface(self.screen_size)
+        self.key_event_binds = {}
+        self.gamedata_update_actions = {}
+        self.display_update_actions = [self.draw_background]
 
-# Snake
-square_color = 33, 255, 33
-square_color2 = 33, 192, 33
-square_color3 = 192, 192, 33
-square_rect = pygame.Rect(0, 0, CELL_SIZE, CELL_SIZE)
-square_direction = RIGHT
-square_turn = RIGHT
-square_speed = 5  # 每秒走几格
-square_delay = 1000 / square_speed  # 蛇每次运动的间隔
-square_time2move = pygame.time.get_ticks() + square_delay
-square_body = [pygame.Rect(0, 0, 0, 0)] * 40  # 蛇的身体
+    def draw_background(self):
+        self.screen.blit(self.background, (0, 0))
 
-# 主循环
-while game_running:
-    # 1 用户控制
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            game_running = False
-        elif event.type == pygame.KEYDOWN:
-            if square_direction in [LEFT, RIGHT]:
-                if event.key == pygame.K_UP:
-                    square_turn = UP
-                elif event.key == pygame.K_DOWN:
-                    square_turn = DOWN
-            elif square_direction in [UP, DOWN]:
-                if event.key == pygame.K_LEFT:
-                    square_turn = LEFT
-                elif event.key == pygame.K_RIGHT:
-                    square_turn = RIGHT
-    # 2 更新数据
-    # 2.1移动蛇
-    if pygame.time.get_ticks() >= square_time2move:
-        square_time2move = pygame.time.get_ticks() + square_delay
-        square_body = [square_rect] + square_body  # 增加一节身体
-        square_body.pop()  # 截取尾部
-        square_direction = square_turn
-        square_rect = square_rect.move(square_direction)
+    def process_events(self):
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                self.quit()
+            elif event.type == pygame.KEYDOWN:
+                action, args = self.key_event_binds.get(event.key)
+                action(args) if args else action() if action else None
 
-    # 2.2判断是否game over
-    if game_playing:
-        # 撞墙
-        if not game_field.contains(square_rect):
-            game_playing = False
-        # 撞身体
-        for cell in square_body:
-            if square_rect == cell:
-                game_playing = False
-        if not game_playing:
-            print "GAME OVER !!!"
+    def update_gamedata(self):
+        for name, action in self.gamedata_update_actions.items():
+            if self.now >= action["next_time"]:
+                action["next_time"] += action["interval"]
+                action["run"]()
 
-    # 3 更新画面
-    if game_playing:
-        output = "坐标:%r 速度:%r 范围:%r FPS:%0.2f 时间:%r"
-        print output % (square_rect, square_direction,
-                        game_field.contains(square_rect), game_clock.get_fps(),
-                        pygame.time.get_ticks())
+    def update_display(self):
+        for action in self.display_update_actions:
+            action()
+        pygame.display.flip()
 
-        # 3.1 清除屏幕内容
-        game_screen.fill(game_bgcolor)
-        # 3.2 画格子
-        for i in range(CELL_SIZE, game_screen_width, CELL_SIZE):
-            pygame.draw.line(game_screen, game_linecolor,
-                             (i, 0), (i, game_screen_height))
-        for i in range(CELL_SIZE, game_screen_height, CELL_SIZE):
-            pygame.draw.line(game_screen, game_linecolor,
-                             (0, i), (game_screen_width, i))
+    def run(self):
+        while True:
+            self.now = pygame.time.get_ticks()
+            self.process_events()
+            self.update_gamedata()
+            self.update_display()
+            self.clock.tick(self.fps)
 
-        # 3.3 画蛇
-        # 画身体
-        for cell in square_body:
-            game_screen.fill(square_color, cell)
-            game_screen.fill(square_color2, cell.inflate(-4, -4))
-        # 画头
-        game_screen.fill(square_color, square_rect)
-        game_screen.fill(square_color3, square_rect.inflate(-4, -4))
+    def quit(self):
+        pygame.quit()
+        sys.exit(0)
 
-    # 3.4 更新窗口内容
-    pygame.display.flip()
-    game_clock.tick(game_speed)
 
-# 退出pygame
-pygame.quit()
-sys.exit(0)
+if __name__ == '__main__':
+    mygame = MyGame(GAME_NAME)
+    mygame.run()

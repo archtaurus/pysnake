@@ -22,5 +22,8 @@
 - **Day 5** 整理代码、蛇的身体、边缘碰撞检测 code reorganize, snake body, and collision
 [[源码 source](https://github.com/archtaurus/pysnake/tree/day5)],
 [[视频教程 video tutorial](http://v.youku.com/v_show/id_XMTY0NDkzNzA0NA==.html)]
+- **Day 6** 初创MyGame类 Class MyGame Starts
+[[源码 source](https://github.com/archtaurus/pysnake/tree/day6)],
+[[视频教程 video tutorial](http://v.youku.com/v_show/id_XMTY0NjE1NzY4NA==.html)]
 
 **[回到最新版本](https://github.com/archtaurus/pysnake/tree/master)**
