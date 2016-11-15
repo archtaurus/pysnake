@@ -60,6 +60,8 @@ Requirements
 - **Day 13** 窗口图标、游戏音效 Icon and Sound
 [[源码 source](https://github.com/archtaurus/pysnake/tree/day13/src)],
 [[视频教程 video tutorial](http://v.youku.com/v_show/id_XMTY1Njc1ODQ1Ng==.html)]
+- **Season 1 ends** 第一季最终代码 Season 1 End Summary
+[[源码 source](https://github.com/archtaurus/pysnake/tree/season1/src)]
 
 ----
 
