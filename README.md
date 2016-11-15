@@ -1,7 +1,7 @@
 pysnake
 =======
 
-用Python基于Pygame写的贪吃蛇，以及一个对Pygame再次封装的通用游戏类MyGame。by [Zhao Xin](mailto:pythonchallenge@qq.com)
+用Python基于Pygame写的贪吃蛇，以及一个对Pygame再次封装的通用游戏类MyGame。
 
 ![screenshot](https://github.com/archtaurus/pysnake/raw/master/screenshots/2016-07-23-020131_642x505_scrot.png)
 
@@ -10,7 +10,7 @@ pysnake
 Requirements
 
 * [Python](https://www.python.org/downloads/) 2.7 or later
-* [Pygame](http://pygame.org/download.shtml)
+* [Pygame](http://pygame.org/download.shtml) 1.9 or later
 
 ----
 
