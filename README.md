@@ -5,11 +5,11 @@ pysnake
 
 ![screenshot](https://github.com/archtaurus/pysnake/raw/master/screenshots/2016-07-23-020131_642x505_scrot.png)
 
-Requirements
-------------
+需求 REQUIREMENTS
+-----------------
 
-* [Python](https://www.python.org/downloads/) 2.7 or later
-* [Pygame](http://pygame.org/download.shtml) 1.9 or later
+1. [Python](https://www.python.org/downloads/) 2.7 or later
+2. [Pygame](http://pygame.org/download.shtml) 1.9 or later
 
 视频教程对应版本列表 DAY by DAY TUTORIALS
 ---------------------------------------
@@ -60,3 +60,12 @@ Requirements
 [[视频教程 video tutorial](http://v.youku.com/v_show/id_XMTY1Njc1ODQ1Ng==.html)]
 - **Season 1** 第一季最终代码 Season 1 End Summary
 [[源码 source](https://github.com/archtaurus/pysnake/tree/season1/src)]
+
+联系老赵
+-------
+
+- QQ群： 200929675
+- 新浪微博： [@老赵爱编程](http://www.weibo.com/archtaurus)
+- 老赵邮箱： [pythonchallenge@qq.com](mailto:pythonchallenge@qq.com)
+- 官方网站： [http://pythonchallenge.club](http://pythonchallenge.club)
+- 优酷频道： [http://i.youku.com/imzhao](http://i.youku.com/imzhao)
