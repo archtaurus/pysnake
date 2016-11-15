@@ -61,11 +61,11 @@ pysnake
 - **Season 1** 第一季最终代码 Season 1 End Summary
 [[源码 source](https://github.com/archtaurus/pysnake/tree/season1/src)]
 
-联系老赵
--------
+联系老赵 CONTACT
+---------------
 
 - QQ群： 200929675
-- 新浪微博： [@老赵爱编程](http://www.weibo.com/archtaurus)
-- 老赵邮箱： [pythonchallenge@qq.com](mailto:pythonchallenge@qq.com)
 - 官方网站： [http://pythonchallenge.club](http://pythonchallenge.club)
 - 优酷频道： [http://i.youku.com/imzhao](http://i.youku.com/imzhao)
+- 老赵邮箱： [pythonchallenge@qq.com](mailto:pythonchallenge@qq.com)
+- 新浪微博： [@老赵爱编程](http://www.weibo.com/archtaurus)
