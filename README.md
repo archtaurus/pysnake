@@ -60,5 +60,3 @@ Requirements
 [[视频教程 video tutorial](http://v.youku.com/v_show/id_XMTY1Njc1ODQ1Ng==.html)]
 - **Season 1** 第一季最终代码 Season 1 End Summary
 [[源码 source](https://github.com/archtaurus/pysnake/tree/season1/src)]
-
-[返回最新版本](https://github.com/archtaurus/pysnake/tree/master)
