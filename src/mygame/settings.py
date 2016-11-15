@@ -9,6 +9,12 @@
 
 import pygame
 
+__title__ = 'pysnake'
+__licence__ = 'GPL'
+__copyright__ = 'Copyright © 2016 Zhao Xin <pythonchallenge@qq.com>'
+__author__ = 'Zhao Xin'
+__version__ = '0.1.161115'
+
 # 颜色设定
 BLACK = 0, 0, 0
 WHITE = 255, 255, 255

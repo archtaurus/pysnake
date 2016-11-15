@@ -10,6 +10,7 @@
 import os
 import sys
 import pygame
+from settings import *
 
 # 使窗口居中
 os.environ["SDL_VIDEO_CENTERED"] = "1"
