@@ -5,16 +5,14 @@ pysnake
 
 ![screenshot](https://github.com/archtaurus/pysnake/raw/master/screenshots/2016-07-23-020131_642x505_scrot.png)
 
-----
-
 Requirements
+------------
 
 * [Python](https://www.python.org/downloads/) 2.7 or later
 * [Pygame](http://pygame.org/download.shtml) 1.9 or later
 
-----
-
-## 视频教程对应版本列表 DAY by DAY TUTORIALS
+视频教程对应版本列表 DAY by DAY TUTORIALS
+---------------------------------------
 
 ### 第一季 SEASON 1
 
@@ -63,6 +61,4 @@ Requirements
 - **Season 1** 第一季最终代码 Season 1 End Summary
 [[源码 source](https://github.com/archtaurus/pysnake/tree/season1/src)]
 
-----
-
-**[回到最新版本](https://github.com/archtaurus/pysnake/tree/master)**
+[返回最新版本](https://github.com/archtaurus/pysnake/tree/master)

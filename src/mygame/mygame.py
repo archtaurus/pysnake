@@ -9,6 +9,7 @@
 
 import os
 import sys
+import time
 import pygame
 from settings import *
 
@@ -48,6 +49,9 @@ class MyGame(object):
         self.screen_size = kwargs.get("screen_size") or SCREEN_SIZE
         self.screen_width, self.screen_height = self.screen_size
         self.display_mode = kwargs.get("display_mode") or DISPLAY_MODE
+        self.images = {}
+        self.sounds = {}
+        self.musics = {}
         self.icon = kwargs.get("icon") or None
         self.icon and pygame.display.set_icon(pygame.image.load(self.icon))
         self.screen = pygame.display.set_mode(self.screen_size,
@@ -58,8 +62,8 @@ class MyGame(object):
         self.font = pygame.font.Font(self.font_name, self.font_size)
         self.clock = pygame.time.Clock()
         self.now = 0
-        self.background = pygame.Surface(self.screen_size)
-
+        self.background_color = kwargs.get("background") or BLACK
+        self.set_background()
         self.key_bindings = {}                      # 按键与函数绑定字典
         self.add_key_binding(KEY_PAUSE, self.pause)
 
@@ -150,6 +154,49 @@ class MyGame(object):
         """退出游戏"""
         pygame.quit()
         sys.exit(0)
+
+    def load_music(self, filename):
+        pygame.mixer.music.load(filename)
+
+    def play_music(self):
+        pygame.mixer.music.play(-1)
+
+    def pause_music(self):
+        pygame.mixer.music.pause()
+
+    def resume_music(self):
+        pygame.mixer.music.unpause()
+
+    def stop_music(self):
+        pygame.mixer.music.stop()
+
+    def save_screenshot(self):
+        filename = time.strftime('screenshots/%Y%m%d%H%M%S.png')
+        pygame.image.save(self.screen, filename)
+
+    def load_images(self, filename, subimgs={}):
+        image = pygame.image.load(filename).convert_alpha()  # 文件打开失败
+        for name, rect in subimgs.items():
+            x, y, w, h = rect
+            self.images[name] = image.subsurface(pygame.Rect((x, y), (w, h)))
+
+    def set_background(self, background=None):
+        if isinstance(background, str):
+            self.background = pygame.image.load(background)
+        else:
+            self.background = pygame.Surface(self.screen_size)
+            self.background_color = background \
+                if isinstance(background, tuple) else (0, 0, 0)
+            self.background.fill(self.background_color)
+
+    def load_sounds(self, **sounds):
+        '''load sounds and put all into self.sounds
+        '''
+        for name, filename in sounds.items():
+            self.sounds[name] = pygame.mixer.Sound(filename)
+
+    def play_sound(self, name):
+        self.sounds[name].play()
 
 
 if __name__ == '__main__':

@@ -21,7 +21,8 @@ class PySnake(MyGame):
                                       display_mode=DISPLAY_MODE,
                                       loop_speed=LOOP_SPEED,
                                       font_name=FONT_NAME,
-                                      font_size=FONT_SIZE)
+                                      font_size=FONT_SIZE,
+                                      background=WHITE)
         # 绘制背景
         self.prepare_background()
         # 创建对象
