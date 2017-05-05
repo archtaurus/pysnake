@@ -62,6 +62,7 @@ Python/Pygame 贪吃蛇游戏 编程视频教程
 ---------------
 
 - QQ群： 200929675
+- 个人网站： [http://nixoahz.com](http://nixoahz.com)
 - 官方网站： [http://pythonchallenge.club](http://pythonchallenge.club)
 - 优酷频道： [http://i.youku.com/imzhao](http://i.youku.com/imzhao)
 - 老赵邮箱： [pythonchallenge@qq.com](mailto:pythonchallenge@qq.com)
