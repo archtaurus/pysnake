@@ -11,7 +11,7 @@
 1. [Python](https://www.python.org/downloads/) 2.7 or later
 2. [Pygame](http://pygame.org/download.shtml) 1.9 or later
 
-视频教程对应版本列表 DAY by DAY TUTORIALS
+视频教程及源码列表 DAY by DAY TUTORIALS
 ---------------------------------------
 
 ### 第一季 SEASON 1
