@@ -1,7 +1,5 @@
-关于 ABOUT
+关于用Python基于Pygame写贪吃蛇游戏的视频教程系列
 =======
-
-这是一系列关于用Python基于Pygame写贪吃蛇游戏的视频教程
 
 ![screenshot](https://github.com/archtaurus/pysnake/raw/master/screenshots/2016-07-23-020131_642x505_scrot.png)
 
