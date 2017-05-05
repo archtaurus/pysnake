@@ -1,4 +1,4 @@
-Python/Pygame贪吃蛇游戏视频教程系列
+Python/Pygame 贪吃蛇游戏编程视频教程
 =======
 
 ![screenshot](https://github.com/archtaurus/pysnake/raw/master/screenshots/2016-07-23-020131_642x505_scrot.png)
