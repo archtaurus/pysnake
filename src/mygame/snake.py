@@ -16,8 +16,8 @@ class Snake(object):
 
     def __init__(self, game):
         self.game = game
-        self.sound_hit = pygame.mixer.Sound("../resources/hit.wav")
-        self.sound_eat = pygame.mixer.Sound("../resources/eat.wav")
+        self.sound_hit = pygame.mixer.Sound("resources/hit.wav")
+        self.sound_eat = pygame.mixer.Sound("resources/eat.wav")
         self.game.add_draw_action(self.draw)
         self.respawn()
 

@@ -22,7 +22,7 @@ GAME_NAME = "My Game"
 SCREEN_SIZE = 640, 480
 DISPLAY_MODE = pygame.HWSURFACE | pygame.DOUBLEBUF
 LOOP_SPEED = 60
-FONT_NAME = "../../resources/Minecraft.ttf"
+FONT_NAME = "resources/Minecraft.ttf"
 FONT_SIZE = 16
 KEY_PAUSE = pygame.K_PAUSE
 

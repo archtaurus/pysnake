@@ -39,9 +39,9 @@ CELL_SIZE = 20
 COLUMNS, ROWS = SCREEN_WIDTH // CELL_SIZE, SCREEN_HEIGHT // CELL_SIZE
 DISPLAY_MODE = pygame.HWSURFACE | pygame.DOUBLEBUF
 LOOP_SPEED = 60
-FONT_NAME = "../resources/Minecraft.ttf"
+FONT_NAME = "resources/Minecraft.ttf"
 FONT_SIZE = 16
-ICON = "../resources/pysnake.png"
+ICON = "resources/pysnake.png"
 UP, DOWN, LEFT, RIGHT = (0, -1), (0, 1), (-1, 0), (1, 0)
 
 # 按键设定
