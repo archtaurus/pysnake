@@ -1,7 +1,7 @@
 # -*- coding:utf-8 -*-
 
-from mygame import MyGame
-from apple import Apple
-from snake import Snake
-from astar import Astar
-from settings import *
+from mygame.mygame import MyGame
+from mygame.apple import Apple
+from mygame.snake import Snake
+from mygame.astar import Astar
+from mygame.settings import *

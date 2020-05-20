@@ -7,8 +7,8 @@
 # 作者: Zhao Xin (赵鑫) <pythonchallenge@qq.com>
 # 时间: 2016.07.24
 
-from settings import *
 from random import randint
+from mygame.settings import *
 
 
 class Apple(object):

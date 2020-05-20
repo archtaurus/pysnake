@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding:utf-8 -*-
 #
 # 项目: pysnake
@@ -7,6 +7,7 @@
 # 许可: General Public License
 # 作者: Zhao Xin (赵鑫) <pythonchallenge@qq.com>
 # 时间: 2016.07.24
+# 更新: 2020.05.21
 
 from mygame import *
 

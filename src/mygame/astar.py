@@ -165,8 +165,8 @@ if __name__ == '__main__':
                 "11011011",
                 "11111011"]
     maze = Astar(map_data, (0, 0), (7, 0))
-    print maze
-    print maze.path
+    print(maze)
+    print(maze.path)
 
     maze.map_data = ["11111110",
                      "00000111",
@@ -174,5 +174,5 @@ if __name__ == '__main__':
                      "11011111",
                      "11111011"]
     maze.end_point = (0, 2)
-    print maze
-    print maze.path
+    print(maze)
+    print(maze.path)
