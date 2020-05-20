@@ -1,6 +1,12 @@
 Python/Pygame 贪吃蛇游戏 编程视频教程
 =======
 
+启动游戏
+
+```sh
+$ make play
+```
+
 ![screenshot](https://github.com/archtaurus/pysnake/raw/master/screenshots/2016-07-23-020131_642x505_scrot.png)
 
 需求 REQUIREMENTS
