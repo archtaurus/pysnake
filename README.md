@@ -86,8 +86,8 @@ while s.count(S)%2*S%n*(S&240):
  d.flip();S+=D;time.wait(99)
 ```
 
-classic_snake_playing.gif
--------------------------
+classic snake playing
+---------------------
 ![classic_snake_playing](https://github.com/archtaurus/pysnake/raw/master/screenshots/classic_snake_playing.gif)
 
 联系老赵 CONTACT
