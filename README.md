@@ -1,13 +1,22 @@
 Python/Pygame 贪吃蛇游戏 编程视频教程
 =======
 
+![screenshot](https://github.com/archtaurus/pysnake/raw/master/screenshots/2016-07-23-020131_642x505_scrot.png)
+
 启动游戏
+--------
 
 ```sh
 $ make play
 ```
 
-![screenshot](https://github.com/archtaurus/pysnake/raw/master/screenshots/2016-07-23-020131_642x505_scrot.png)
+游戏控制
+--------
+
+- 上下左右方向按键 => 控制方向
+- R => 重新开始
+- ESC => 退出游戏
+
 
 需求 REQUIREMENTS
 -----------------
