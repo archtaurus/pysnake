@@ -20,7 +20,7 @@ $ make play
 
 需求 REQUIREMENTS
 -----------------
--  [Python](https://www.python.org/downloads/) 2.7 or later
+-  [Python](https://www.python.org/downloads/) 3.x or later
 -  [Pygame](http://pygame.org/download.shtml) 1.9 or later
 
 视频教程及源码列表 DAY by DAY TUTORIALS
