@@ -94,8 +94,5 @@ classic snake playing
 ---------------
 
 - QQ群： 200929675
-- 个人网站： [http://nixoahz.com](http://nixoahz.com)
-- 官方网站： [http://pythonchallenge.club](http://pythonchallenge.club)
+- 官方网站： [https://www.haoohaoo.com](https://www.haoohaoo.com)
 - 优酷频道： [http://i.youku.com/imzhao](http://i.youku.com/imzhao)
-- 老赵邮箱： [pythonchallenge@qq.com](mailto:pythonchallenge@qq.com)
-- 新浪微博： [@老赵爱编程](http://www.weibo.com/archtaurus)
