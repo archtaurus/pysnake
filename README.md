@@ -7,6 +7,8 @@ Python/Pygame 贪吃蛇游戏 编程视频教程
 --------
 
 ```sh
+$ git clone git@github.com:archtaurus/pysnake.git
+$ cd pysnake
 $ make play
 ```
 
