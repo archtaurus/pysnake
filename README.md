@@ -20,8 +20,8 @@ $ make play
 
 需求 REQUIREMENTS
 -----------------
--  [Python](https://www.python.org/downloads/) 3.x or later
--  [Pygame](http://pygame.org/download.shtml) 1.9 or later
+-  [Python3](https://www.python.org/downloads/)
+-  [Pygame](http://pygame.org/download.shtml)
 -  [pipenv](https://pypi.org/project/pipenv/)
 -  make
 
