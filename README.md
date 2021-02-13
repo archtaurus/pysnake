@@ -3,7 +3,14 @@ Python/Pygame 贪吃蛇游戏 编程视频教程
 
 ![screenshot](https://github.com/archtaurus/pysnake/raw/master/screenshots/2016-07-23-020131_642x505_scrot.png)
 
-启动游戏
+需求 REQUIREMENTS
+-----------------
+-  [Python3](https://www.python.org/downloads/)
+-  [Pygame](http://pygame.org/download.shtml)
+-  [pipenv](https://pypi.org/project/pipenv/)
+-  make
+
+启动游戏 USAGE
 --------
 
 ```sh
@@ -12,20 +19,12 @@ $ cd pysnake
 $ make play
 ```
 
-游戏控制
+游戏控制 CONTROL
 --------
 
 - 上下左右方向按键 => 控制方向
 - R => 重新开始
 - ESC => 退出游戏
-
-
-需求 REQUIREMENTS
------------------
--  [Python3](https://www.python.org/downloads/)
--  [Pygame](http://pygame.org/download.shtml)
--  [pipenv](https://pypi.org/project/pipenv/)
--  make
 
 视频教程及源码列表 DAY by DAY TUTORIALS
 ---------------------------------------
@@ -90,7 +89,7 @@ while s.count(S)%2*S%n*(S&240):
  d.flip();S+=D;time.wait(99)
 ```
 
-classic snake playing
+Classic Snake Playing
 ---------------------
 ![classic_snake_playing](https://github.com/archtaurus/pysnake/raw/master/screenshots/classic_snake_playing.gif)
 
