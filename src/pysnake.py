@@ -7,10 +7,9 @@
 # 许可: General Public License
 # 作者: Zhao Xin (赵鑫) <pythonchallenge@qq.com>
 # 时间: 2016.07.24
-# 更新: 2020.05.21
+# 更新: 2022.02.05 (by Frank_Star)
 
 from mygame import *
-
 
 class PySnake(MyGame):
     """贪吃蛇游戏"""
@@ -28,6 +27,9 @@ class PySnake(MyGame):
         self.prepare_background()
         # 创建对象
         self.apple_counter = 0
+
+        self.apple_max = 0 # 记录最高分
+
         self.snake = Snake(self)
         self.apple = Apple(self)
         # 绑定按键
@@ -58,15 +60,24 @@ class PySnake(MyGame):
 
     def draw_score(self):
         text = "Apple %d" % self.apple_counter
+        
+        self.apple_max=max(self.apple_max,self.apple_counter) # 更新最高分
+        
         self.draw_text(text, (0, 0), (255, 255, 33))
 
         if not self.snake.alive:
             self.draw_text(" GAME OVER ",
                            (SCREEN_WIDTH / 2 - 54, SCREEN_HEIGHT / 2 - 10),
                            (255, 33, 33), WHITE)
+            
             self.draw_text(" press R to restart ",
                            (SCREEN_WIDTH / 2 - 85, SCREEN_HEIGHT / 2 + 20),
                            GREY, DARK_GREY)
+            
+            self.draw_text("Current highest score : %d" % self.apple_max,
+                           (SCREEN_WIDTH / 2 - 114, SCREEN_HEIGHT / 2 + 50),
+                           (255, 33, 33), WHITE)  # 展示最高分
+            
 
         if not self.running and self.snake.alive:
             self.draw_text(" GAME PAUSED ",
